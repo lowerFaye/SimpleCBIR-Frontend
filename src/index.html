@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <!-- import semantic-ui and jquery -->
+    <script src="./libs/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./libs/Semantic-UI-CSS/semantic.min.css" />
+    <script src="./libs/Semantic-UI-CSS/semantic.min.js"></script>
+  </head>
+  <body>
+    <script>
+      if (window.innerHeight)
+        const winHeight = window.innerHeight;  
+
+    </script>
+
+    <style type="text/css">
+      p{
+        *-webkit-user-select:none;*
+      }
+      .tophead{
+        height: 250px
+      }
+      .result{
+        height: 200px
+      }
+      .ui.button{
+        margin-top: 1em
+      }
+
+    </style>
+
+    <div class="ui inverted vertical center aligned segment tophead ">
+        <div class="ui two column divided grid container">
+          <div class="column">
+            <!--MENU START-->
+            <div class="ui mini equal width inverted form">
+
+              <div class="inline required field">
+                <label class="inverted">预处理&nbsp&nbsp&nbsp&nbsp</label>
+                <div class="ui selection dropdown" id="dd1">
+                  <input type="hidden" name="preprocess">
+                  <i class="dropdown icon"></i>
+                  <div class="default text"></div>
+                  <div class="menu">
+                    <div class="item default" data-value="1-A">预处理算法A</div>
+                    <div class="item" data-value="1-B">预处理算法B</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="inline required field">
+                <label class="inverted">特征提取</label>
+                <div class="ui selection dropdown" id="dd2">
+                  <input type="hidden" name="featureExtraction">
+                  <i class="dropdown icon"></i>
+                  <div class="default text"></div>
+                  <div class="menu">
+                    <div class="item default" data-value="2-A">特征提取算法A</div>
+                    <div class="item" data-value="2-B">特征提取算法B</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="inline required field">
+                <label class="inverted">目标识别</label>
+                <div class="ui selection dropdown" id="dd3">
+                  <input type="hidden" name="targetRecognition">
+                  <i class="dropdown icon"></i>
+                  <div class="default text"></div>
+                  <div class="menu">
+                    <div class="item default" data-value="3-A">目标识别算法A</div>
+                    <div class="item" data-value="3-B">目标识别算法B</div>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="inline required field">
+                <label class="inverted">相似计算</label>
+                <div class="ui selection dropdown" id="dd4">
+                  <input type="hidden" name="similarityCalculation">
+                  <i class="dropdown icon"></i>
+                  <div class="default text"></div>
+                  <div class="menu">
+                    <div class="item default" data-value="4-A">相似计算算法A</div>
+                    <div class="item" data-value="4-B">相似计算算法B</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="inline required field">
+                <label class="inverted">相关反馈</label>
+                <div class="ui selection dropdown" id="dd5">
+                  <input type="hidden" name="relevanceFeedback">
+                  <i class="dropdown icon"></i>
+                  <div class="default text"></div>
+                  <div class="menu">
+                    <div class="item default" data-value="5-A">相关反馈算法A</div>
+                    <div class="item" data-value="5-B">相关反馈算法B</div>
+                  </div>
+                </div>
+              </div>
+                
+
+            </div>
+            <!--MENU END -->
+          </div>
+          <div class="column">
+            <div class="ui small rounded image">
+              <div class="ui grey ribbon label">
+                <i class="hourglass start icon"></i>待检索图像
+              </div>
+              <img src="./imgs/default.png">
+              <button class="ui button" id="btn1">
+                  Select
+              </button>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="ui vertical center aligned segment result ">
+        <div class="ui three column grid container">
+          <div class="four wide column">
+            <p>检索方法 A</p>
+            <p>查全率：<span>87.5%</span></p>
+            <p>查准率：<span>93.2%</span></p>
+            <button class="ui icon button" id="btn2">
+                <i class="wizard icon"></i>
+            </button>            
+          </div>
+          <div class="four wide column">
+            <div class="ui shape">
+              <div class="sides">
+
+                <div class="active side">
+                    <p>RESULT #1</p>  
+                    <div class="ui tiny rounded image">
+                      <img src="./imgs/default.png">
+                    </div>
+                    <p>相似度：<span>98.7%</span></p>
+                </div>
+
+                <div class="side">
+                    <p>颜色特征</p>
+                    <div class="ui tiny rounded image">
+                      <img src="./imgs/default.png">
+                    </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="four wide column">
+
+            <div class="ui shape">
+              <div class="sides">
+
+                <div class="active side">
+                    <p>RESULT #2</p>
+                    <div class="ui tiny rounded image">
+                      <img src="./imgs/default.png">
+                    </div>
+                    <p>相似度：<span>78.9%</span></p>
+                </div>
+
+                <div class="side">
+                    <p>纹理特征</p>
+                    <div class="ui tiny rounded image">
+                      <img src="./imgs/default.png">
+                    </div>
+                </div>
+
+
+              </div>
+            </div>
+
+
+
+          </div>
+          <div class="four wide column">
+
+            <div class="ui shape">
+              <div class="sides">
+                <div class="active side">
+                    <p>RESULT #3</p>
+                    <div class="ui tiny rounded image">
+                      <img src="./imgs/default.png">
+                    </div>
+                    <p>相似度：<span>50.4%</span></p>
+                </div>
+                <div class="side">
+                    <p>形状特征</p>
+                    <div class="ui tiny rounded image">
+                      <img src="./imgs/default.png">
+                    </div>
+                </div>
+
+
+
+              </div>
+
+            </div>
+
+
+          </div>
+        </div>
+    </div>
+
+    <div class="ui vertical center aligned segment result ">
+        <div class="ui three column grid container">
+          <div class="four wide column">
+            <p>检索方法 B</p>
+            <p>查全率：<span>87.5%</span></p>
+            <p>查准率：<span>93.2%</span></p>
+          </div>
+          <div class="four wide column">
+            <p>RESULT #1</p>  
+            <div class="ui tiny rounded image">
+              <img src="./imgs/default.png">
+            </div>
+            <p>相似度：<span>99.9%</span></p>
+          </div>
+          <div class="four wide column">
+            <p>RESULT #2</p>
+            <div class="ui tiny rounded image">
+              <img src="./imgs/default.png">
+            </div>
+            <p>相似度：<span>87.5%</span></p>
+          </div>
+          <div class="four wide column">
+            <p>RESULT #3</p>
+            <div class="ui tiny rounded image">
+              <img src="./imgs/default.png">
+            </div>
+            <p>相似度：<span>66.2%</span></p>
+          </div>
+        </div>
+    </div>
+
+    <script>
+      // // You can also require other files to run in this process
+      const jQuery = require('jquery')
+      const $ = jQuery
+      require('./libs/Semantic-UI-CSS/semantic.min.js')
+      $(document).ready(()=>{
+        // $("#btn-1").click(()=>{
+        //   $('.ui.sidebar').sidebar('toggle');
+        // })
+        $('#dd1')
+          .dropdown()
+        ;
+        $('#dd2')
+          .dropdown()
+        ;
+        $('#dd3')
+          .dropdown()
+        ;
+        $('#dd4')
+          .dropdown()
+        ;
+        $('#dd5')
+          .dropdown()
+        ;
+
+        // $("#btn2").click(()=>{
+        //   $('.shape').shape('flip over');
+        // })
+
+
+      })
+    </script>
+  </body>
+</html>
