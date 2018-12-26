@@ -4,7 +4,8 @@
   "description": "A Demo for my big homework, powered by Electron & Semantic UI",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "packager":"electron-packager ../BHWF/ BHWF --platform=win32 --arch=x64 --out=./dist"
   },
   "keywords": [
     "Electron",
@@ -14,7 +15,8 @@
     "demo"
   ],
   "devDependencies": {
-    "electron": "^3.0.7"
+    "electron": "^3.0.7",
+    "electron-packager": "^13.0.1"
   },
   "dependencies": {
     "jquery": "^3.3.1"
